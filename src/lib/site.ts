@@ -2,24 +2,18 @@ import type { LucideIcon } from "lucide-react"
 import {
   BellRing,
   BarChart3,
-  Blocks,
   Bot,
   CircleAlert,
   Clock3,
   CheckCheck,
   Github,
-  Layers2,
   LayoutTemplate,
   Linkedin,
   Mail,
   MessageSquareText,
-  MessageSquareQuote,
-  ShieldCheck,
   Sparkles,
   TimerReset,
   TrendingUp,
-  WalletCards,
-  Workflow,
 } from "lucide-react"
 
 export type NavItem = {
@@ -36,17 +30,6 @@ export type SocialLink = {
   label: string
   href: string
   icon: LucideIcon
-}
-
-export type FoundationPillar = {
-  title: string
-  description: string
-  icon: LucideIcon
-}
-
-export type HighlightStat = {
-  label: string
-  value: string
 }
 
 export type HeroProofItem = {
@@ -79,15 +62,6 @@ export type PreviewWorkflowItem = {
 export type PreviewActivityItem = {
   title: string
   detail: string
-  icon: LucideIcon
-}
-
-export type PlaceholderSectionContent = {
-  id: string
-  eyebrow: string
-  title: string
-  description: string
-  bullets: string[]
   icon: LucideIcon
 }
 
@@ -125,40 +99,6 @@ export const socialLinks: SocialLink[] = [
   { label: "GitHub", href: "#", icon: Github },
   { label: "LinkedIn", href: "#", icon: Linkedin },
   { label: "Email", href: "#", icon: Mail },
-]
-
-export const foundationHighlights: HighlightStat[] = [
-  { label: "Container", value: "1200px max width" },
-  { label: "Buttons", value: "4 CTA variants" },
-  { label: "Tokens", value: "Type, color, spacing" },
-  { label: "Shells", value: "Navbar + footer" },
-]
-
-export const foundationPillars: FoundationPillar[] = [
-  {
-    title: "Design tokens",
-    description:
-      "Shared color, radius, shadow, spacing, and typography values are centralized before section work begins.",
-    icon: Layers2,
-  },
-  {
-    title: "Layout primitives",
-    description:
-      "Container, Section, and SectionHeader enforce a consistent visual rhythm across future landing page sections.",
-    icon: Workflow,
-  },
-  {
-    title: "UI primitives",
-    description:
-      "Button, Card, Badge, StatChip, and IconContainer create a reusable component baseline for upcoming sprints.",
-    icon: Blocks,
-  },
-  {
-    title: "Navigation shell",
-    description:
-      "Responsive navigation and a structured footer already frame the page, so later sections can focus on content and conversion.",
-    icon: LayoutTemplate,
-  },
 ]
 
 export const heroProofItems: HeroProofItem[] = [
@@ -225,70 +165,6 @@ export const previewActivityItems: PreviewActivityItem[] = [
     icon: CheckCheck,
   },
 ]
-
-export const placeholderSections: PlaceholderSectionContent[] = [
-  {
-    id: "features",
-    eyebrow: "Features",
-    title: "Outcome-led feature grid",
-    description:
-      "This section will explain how RelayOps handles intake, automations, ownership, and reporting without turning into a dense product dump.",
-    bullets: ["Operational use cases", "Outcome-focused feature cards", "Clear capability hierarchy"],
-    icon: Blocks,
-  },
-  {
-    id: "how-it-works",
-    eyebrow: "How It Works",
-    title: "Adoption flow and setup story",
-    description:
-      "A later sprint will show how teams capture work, automate handoffs, and track workflow health in a simple three-step story.",
-    bullets: ["Capture requests", "Automate handoffs", "Track progress and SLAs"],
-    icon: Workflow,
-  },
-  {
-    id: "social-proof",
-    eyebrow: "Social Proof",
-    title: "Testimonials and customer credibility",
-    description:
-      "Testimonials, logo treatments, and quantified outcomes will be added here once the hero and messaging are established.",
-    bullets: ["Customer quotes", "Outcome metrics", "Credibility markers"],
-    icon: MessageSquareQuote,
-  },
-  {
-    id: "pricing",
-    eyebrow: "Pricing",
-    title: "Plan comparison and CTA logic",
-    description:
-      "Pricing stays deferred for now, but the future section will compare plans clearly and support the free-trial decision path.",
-    bullets: ["Plan cards", "Most popular emphasis", "Monthly and annual toggle"],
-    icon: WalletCards,
-  },
-  {
-    id: "faq",
-    eyebrow: "FAQ",
-    title: "Objection handling and reassurance",
-    description:
-      "An accordion-based FAQ will live here in a later sprint to handle setup, integrations, support, and commitment questions.",
-    bullets: ["Accordion behavior", "Objection handling", "Conversion support"],
-    icon: ShieldCheck,
-  },
-]
-
-export const sprint3PlaceholderSections = placeholderSections.filter((section) =>
-  ["features", "pricing", "faq"].includes(section.id),
-)
-
-export const sprint4PlaceholderSections = placeholderSections.filter((section) =>
-  ["pricing", "faq"].includes(section.id),
-)
-
-export const sprint5PlaceholderSections = placeholderSections.filter((section) =>
-  ["pricing", "faq"].includes(section.id),
-)
-
-export const sprint6PlaceholderSections = placeholderSections.filter((section) =>
-  ["faq"].includes(section.id),
-)
 
 export const heroCallouts = [
   {
