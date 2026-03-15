@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout/Container"
+import { Reveal } from "@/components/ui/reveal"
 import { IconContainer } from "@/components/ui/icon-container"
 import { brand, footerLinkGroups, socialLinks } from "@/lib/site"
 
@@ -7,7 +8,7 @@ export function Footer() {
     <footer id="footer" className="border-t border-border/70 bg-card/80 py-12 sm:py-14">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
-          <div className="max-w-lg space-y-6">
+          <Reveal className="max-w-lg space-y-6">
             <div className="flex items-center gap-3">
               <div className="flex size-12 items-center justify-center rounded-2xl bg-secondary/12 font-heading text-sm font-semibold text-secondary">
                 {brand.monogram}
@@ -38,9 +39,9 @@ export function Footer() {
                 )
               })}
             </div>
-          </div>
+          </Reveal>
 
-          <div className="grid gap-8 sm:grid-cols-2 sm:gap-10">
+          <Reveal delay={120} direction="left" className="grid gap-8 sm:grid-cols-2 sm:gap-10">
             {footerLinkGroups.map((group) => (
               <div key={group.title} className="space-y-4">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
@@ -60,12 +61,12 @@ export function Footer() {
                 </ul>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
 
         <div className="mt-10 flex flex-col gap-3 border-t border-border/70 pt-6 text-caption leading-6 text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>Copyright 2026 RelayOps. Workflow operations SaaS landing page template.</p>
-          <p>React, Vite, TypeScript, Tailwind CSS, shadcn/ui patterns, lucide-react.</p>
+          <p>&copy; 2026 RelayOps. Modern SaaS landing page template.</p>
+          <p>Built with React, Vite, TypeScript, Tailwind CSS, and lucide-react.</p>
         </div>
       </Container>
     </footer>

@@ -1,19 +1,12 @@
 import type { LucideIcon } from "lucide-react"
 import {
-  BellRing,
-  BarChart3,
-  Bot,
+  ArrowUpRight,
   CircleAlert,
-  Clock3,
-  CheckCheck,
   Github,
-  LayoutTemplate,
   Linkedin,
   Mail,
-  MessageSquareText,
   Sparkles,
-  TimerReset,
-  TrendingUp,
+  Workflow,
 } from "lucide-react"
 
 export type NavItem = {
@@ -69,9 +62,8 @@ export const brand = {
   name: "RelayOps",
   monogram: "RO",
   tagline: "Run recurring work without the follow-up.",
-  summary:
-    "RelayOps centralizes recurring work, automates handoffs, and keeps every deadline visible for modern operations teams.",
-  category: "Workflow operations platform",
+  summary: "Keep requests, owners, and progress in one clear place.",
+  category: "Workflow platform",
 }
 
 export const navItems: NavItem[] = [
@@ -102,15 +94,15 @@ export const socialLinks: SocialLink[] = [
 ]
 
 export const heroProofItems: HeroProofItem[] = [
-  { label: "Trusted by", value: "1,200+ operations teams", tone: "accent" },
-  { label: "Follow-up reduced", value: "42% on recurring workflows" },
-  { label: "Used across", value: "SaaS, fintech, and logistics" },
+  { label: "Trusted by", value: "1,200+ modern teams", tone: "accent" },
+  { label: "Less busywork", value: "42% less back-and-forth" },
+  { label: "Launch faster", value: "Setup in days, not months" },
 ]
 
 export const previewMetrics: PreviewMetric[] = [
-  { label: "Active workflows", value: "128", change: "+12 this week", tone: "accent" },
-  { label: "SLA health", value: "98.3%", change: "3 at-risk handoffs" },
-  { label: "Approvals waiting", value: "06", change: "2 need escalation", tone: "warning" },
+  { label: "Active work", value: "128", change: "+12 this week", tone: "accent" },
+  { label: "Team health", value: "98.3%", change: "3 items need review" },
+  { label: "Automations", value: "06", change: "2 launched today", tone: "warning" },
 ]
 
 export const previewChartPoints: PreviewChartPoint[] = [
@@ -123,7 +115,7 @@ export const previewChartPoints: PreviewChartPoint[] = [
 
 export const previewWorkflowItems: PreviewWorkflowItem[] = [
   {
-    name: "Customer onboarding",
+    name: "Onboarding flow",
     owner: "Maya Chen",
     due: "Today, 4:00 PM",
     progress: 84,
@@ -131,7 +123,7 @@ export const previewWorkflowItems: PreviewWorkflowItem[] = [
     tone: "success",
   },
   {
-    name: "Renewal approvals",
+    name: "Launch checklist",
     owner: "Chris Patel",
     due: "Tomorrow, 10:30 AM",
     progress: 58,
@@ -139,72 +131,42 @@ export const previewWorkflowItems: PreviewWorkflowItem[] = [
     tone: "warning",
   },
   {
-    name: "Launch readiness",
+    name: "Approval request",
     owner: "Avery Lopez",
     due: "Friday, 2:00 PM",
     progress: 73,
-    status: "Waiting on Legal",
+    status: "Waiting on feedback",
     tone: "muted",
   },
 ]
 
 export const previewActivityItems: PreviewActivityItem[] = [
   {
-    title: "AI summary posted to Slack",
-    detail: "Renewal approvals are blocked on Finance and need one reviewer.",
-    icon: Bot,
+    title: "Design review approved",
+    detail: "The launch workflow moved ahead without another status check-in.",
+    icon: Sparkles,
   },
   {
-    title: "Escalation timer triggered",
-    detail: "An SLA alert fired for onboarding handoff #1842 after 18 hours idle.",
-    icon: BellRing,
+    title: "Customer onboarding started",
+    detail: "A new request was routed automatically and picked up right away.",
+    icon: Workflow,
   },
   {
-    title: "Handoff completed",
-    detail: "Implementation signed off and moved the launch workflow into QA.",
-    icon: CheckCheck,
+    title: "Finance approval requested",
+    detail: "A high-priority handoff was flagged before it slowed the team down.",
+    icon: CircleAlert,
   },
 ]
 
 export const heroCallouts = [
   {
-    label: "SLA alerts",
-    value: "3 handoffs need attention",
+    label: "Priority alerts",
+    value: "3 tasks need attention",
     icon: CircleAlert,
   },
   {
-    label: "Weekly trend",
-    value: "18% faster approvals",
-    icon: TrendingUp,
-  },
-  {
-    label: "Automation",
-    value: "6 recurring workflows active",
-    icon: TimerReset,
-  },
-  {
-    label: "Activity",
-    value: "Slack and Jira synced live",
-    icon: MessageSquareText,
-  },
-  {
-    label: "Workflow board",
-    value: "Live operational visibility",
-    icon: LayoutTemplate,
-  },
-  {
-    label: "Due soon",
-    value: "2 launch tasks close today",
-    icon: Clock3,
-  },
-  {
-    label: "Live dashboard",
-    value: "Bottlenecks surfaced instantly",
-    icon: Sparkles,
-  },
-  {
-    label: "Reporting",
-    value: "Weekly workflow health digest",
-    icon: BarChart3,
+    label: "Momentum",
+    value: "18% faster turnaround",
+    icon: ArrowUpRight,
   },
 ]

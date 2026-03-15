@@ -30,48 +30,39 @@ export const socialLogos: SocialLogo[] = [
 export const outcomeStats: OutcomeStat[] = [
   {
     value: "42%",
-    label: "less workflow follow-up",
-    detail: "Teams spend less time chasing approvals and handoff status.",
+    label: "less follow-up",
+    detail: "Less time spent chasing status.",
     tone: "accent",
   },
   {
     value: "3x",
-    label: "faster request routing",
-    detail: "Priority work reaches the right owner without manual triage.",
+    label: "faster routing",
+    detail: "Requests reach the right owner sooner.",
   },
   {
     value: "1,200+",
     label: "teams using RelayOps",
-    detail: "Operations, RevOps, and customer success teams run recurring work in one place.",
+    detail: "Used across SaaS, fintech, logistics, and e-commerce.",
   },
   {
     value: "99.9%",
-    label: "workflow completion reliability",
-    detail: "Standardized processes keep recurring work moving even across multiple handoffs.",
+    label: "completion reliability",
+    detail: "A clearer process means fewer missed steps.",
     tone: "accent",
   },
 ]
 
 export const testimonials: Testimonial[] = [
   {
-    quote:
-      "RelayOps cut the back-and-forth around renewals because ownership and SLA risk are visible in one view instead of spread across tools.",
+    quote: "RelayOps cut the back-and-forth almost immediately. Everyone knows what to do next.",
     name: "Alina Brooks",
     role: "Head of Operations",
     company: "Northstar",
   },
   {
-    quote:
-      "We stopped losing time to launch handoffs. Everyone knows who owns the next step and what needs attention before a deadline slips.",
+    quote: "We finally have one place to see progress, owners, and risk without slowing the team down.",
     name: "Marcus Reed",
     role: "RevOps Manager",
     company: "ParcelLoop",
-  },
-  {
-    quote:
-      "Customer success requests used to bounce between Slack threads and spreadsheets. Now routing and follow-up happen automatically.",
-    name: "Priya Shah",
-    role: "Customer Success Lead",
-    company: "MetricForge",
   },
 ]

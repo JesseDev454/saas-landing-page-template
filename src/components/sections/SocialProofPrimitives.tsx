@@ -42,13 +42,13 @@ export function OutcomeStatCard({ stat }: { stat: OutcomeStat }) {
   return (
     <Card
       className={cn(
-        "interactive-card h-full border-border/70 shadow-card motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-4 motion-safe:duration-700",
+        "interactive-card h-full border-border/70 shadow-card",
         statToneClasses[stat.tone ?? "default"],
       )}
     >
       <CardHeader className="gap-4">
         <Badge variant={stat.tone === "accent" ? "brand" : "outline"} className="w-fit">
-          Operational impact
+          Results
         </Badge>
         <div className="space-y-2">
           <CardTitle className="font-heading text-[2.2rem] leading-none tracking-tight text-foreground sm:text-[2.6rem]">

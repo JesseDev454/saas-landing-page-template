@@ -29,7 +29,7 @@ export function Accordion({ items, defaultValue, className }: AccordionProps) {
           <div
             key={item.id}
             className={cn(
-              "rounded-[1.6rem] border border-border/70 bg-card/96 shadow-soft transition-all duration-300",
+              "rounded-[1.6rem] border border-border/70 bg-card/96 shadow-soft transition-all duration-300 ease-out",
               isOpen ? "shadow-card" : "interactive-card-soft",
             )}
           >
@@ -48,7 +48,7 @@ export function Accordion({ items, defaultValue, className }: AccordionProps) {
 
                 <span
                   className={cn(
-                    "flex size-10 shrink-0 items-center justify-center rounded-full border border-border/70 bg-background/85 text-muted-foreground transition-all duration-300",
+                    "flex size-10 shrink-0 items-center justify-center rounded-full border border-border/70 bg-background/85 text-muted-foreground transition-all duration-300 ease-out",
                     isOpen ? "rotate-180 bg-secondary/10 text-secondary" : undefined,
                   )}
                   aria-hidden="true"

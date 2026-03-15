@@ -78,14 +78,42 @@
   }
 
   .interactive-card {
-    @apply transition-all duration-300 motion-reduce:transform-none hover:-translate-y-1 hover:shadow-card;
+    @apply will-change-transform transition-[transform,box-shadow,border-color,background-color] duration-300 motion-reduce:transform-none hover:-translate-y-1 hover:border-border/90 hover:shadow-card;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .interactive-card-soft {
-    @apply transition-all duration-300 motion-reduce:transform-none hover:-translate-y-0.5 hover:shadow-card;
+    @apply will-change-transform transition-[transform,box-shadow,border-color,background-color] duration-300 motion-reduce:transform-none hover:-translate-y-0.5 hover:border-border/90 hover:shadow-card;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .eyebrow-label {
     @apply text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translate3d(var(--reveal-x, 0px), var(--reveal-y, 28px), 0);
+    transition:
+      opacity var(--reveal-duration, 700ms) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+      transform var(--reveal-duration, 700ms) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

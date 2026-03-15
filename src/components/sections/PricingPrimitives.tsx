@@ -44,17 +44,26 @@ export function BillingToggle({
 
   return (
     <div className="inline-flex items-center rounded-full border border-border/70 bg-background/88 p-1 shadow-soft">
-      <div role="radiogroup" aria-label="Billing frequency" className="flex items-center gap-1">
+      <div
+        role="radiogroup"
+        aria-label="Billing frequency"
+        className="relative grid min-w-[16rem] grid-cols-2 items-center sm:min-w-[18rem]"
+      >
+        <span
+          aria-hidden="true"
+          className={cn(
+            "absolute inset-y-0.5 left-0.5 w-[calc(50%-0.125rem)] rounded-full shadow-soft transition-transform duration-300 ease-out",
+            isYearly ? "translate-x-full bg-foreground" : "translate-x-0 bg-card",
+          )}
+        />
         <button
           type="button"
           role="radio"
           aria-checked={!isYearly}
           tabIndex={!isYearly ? 0 : -1}
           className={cn(
-            "rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-            !isYearly
-              ? "bg-card text-foreground shadow-soft"
-              : "text-muted-foreground hover:text-foreground",
+            "relative z-10 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+            !isYearly ? "text-foreground" : "text-muted-foreground hover:text-foreground",
           )}
           onClick={() => onChange("monthly")}
           onKeyDown={(event) => handleToggleKeyDown(event, onChange)}
@@ -67,10 +76,8 @@ export function BillingToggle({
           aria-checked={isYearly}
           tabIndex={isYearly ? 0 : -1}
           className={cn(
-            "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-            isYearly
-              ? "bg-foreground text-background shadow-soft"
-              : "text-muted-foreground hover:text-foreground",
+            "relative z-10 inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+            isYearly ? "text-background" : "text-muted-foreground hover:text-foreground",
           )}
           onClick={() => onChange("yearly")}
           onKeyDown={(event) => handleToggleKeyDown(event, onChange)}
@@ -170,7 +177,7 @@ export function PricingTrustBadge({ item }: { item: PricingTrustItem }) {
   const Icon = item.icon
 
   return (
-    <div className="flex min-h-[3rem] items-center gap-2 rounded-full border border-border/70 bg-background/84 px-4 py-2 text-sm text-foreground shadow-soft">
+    <div className="interactive-card-soft flex min-h-[3rem] items-center gap-2 rounded-full border border-border/70 bg-background/84 px-4 py-2 text-sm text-foreground shadow-soft">
       <Icon className="size-4 text-secondary" aria-hidden="true" />
       <span>{item.label}</span>
     </div>
