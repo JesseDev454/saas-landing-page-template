@@ -9,11 +9,14 @@ interface SectionPlaceholderProps {
 
 export function SectionPlaceholder({ section }: SectionPlaceholderProps) {
   return (
-    <Card className="h-full border-border/70 bg-card/95 shadow-card">
+    <Card
+      id={section.id}
+      className="h-full scroll-mt-28 border-border/70 bg-card/95 shadow-card transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-1"
+    >
       <CardHeader className="gap-5">
         <div className="flex items-start justify-between gap-4">
           <IconContainer icon={section.icon} />
-          <Badge variant="outline">Planned for later sprint</Badge>
+          <Badge variant="outline">Coming in a later sprint</Badge>
         </div>
         <div className="space-y-3">
           <p className="text-caption font-semibold uppercase tracking-[0.16em] text-muted-foreground">

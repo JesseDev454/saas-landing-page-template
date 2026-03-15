@@ -49,7 +49,10 @@ export function Footer() {
                 <ul className="space-y-3">
                   {group.links.map((link) => (
                     <li key={link.label}>
-                      <a className="text-body text-foreground/80 hover:text-foreground" href={link.href}>
+                      <a
+                        className="text-body text-foreground/80 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        href={link.href}
+                      >
                         {link.label}
                       </a>
                     </li>
@@ -61,7 +64,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col gap-3 border-t border-border/70 pt-6 text-caption text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 RelayOps. Portfolio template foundation for Sprint 1.</p>
+          <p>(c) 2026 RelayOps. Workflow operations SaaS landing page template.</p>
           <p>React, Vite, TypeScript, Tailwind CSS, shadcn/ui patterns, lucide-react.</p>
         </div>
       </Container>

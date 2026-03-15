@@ -1,14 +1,23 @@
 import type { LucideIcon } from "lucide-react"
 import {
+  BellRing,
   BarChart3,
   Blocks,
+  Bot,
+  CircleAlert,
+  Clock3,
+  CheckCheck,
   Github,
+  Layers2,
   LayoutTemplate,
-  Layers3,
   Linkedin,
   Mail,
+  MessageSquareText,
   MessageSquareQuote,
   ShieldCheck,
+  Sparkles,
+  TimerReset,
+  TrendingUp,
   WalletCards,
   Workflow,
 } from "lucide-react"
@@ -40,6 +49,39 @@ export type HighlightStat = {
   value: string
 }
 
+export type HeroProofItem = {
+  label: string
+  value: string
+  tone?: "default" | "accent"
+}
+
+export type PreviewMetric = {
+  label: string
+  value: string
+  change: string
+  tone?: "default" | "accent" | "warning"
+}
+
+export type PreviewChartPoint = {
+  label: string
+  value: number
+}
+
+export type PreviewWorkflowItem = {
+  name: string
+  owner: string
+  due: string
+  progress: number
+  status: string
+  tone: "success" | "warning" | "muted"
+}
+
+export type PreviewActivityItem = {
+  title: string
+  detail: string
+  icon: LucideIcon
+}
+
 export type PlaceholderSectionContent = {
   id: string
   eyebrow: string
@@ -54,13 +96,14 @@ export const brand = {
   monogram: "RO",
   tagline: "Run recurring work without the follow-up.",
   summary:
-    "Fictional workflow operations SaaS used as the product anchor for this portfolio template.",
+    "RelayOps centralizes recurring work, automates handoffs, and keeps every deadline visible for modern operations teams.",
+  category: "Workflow operations platform",
 }
 
 export const navItems: NavItem[] = [
-  { label: "Foundation", href: "#foundation" },
-  { label: "Tokens", href: "#layout-system" },
-  { label: "Placeholders", href: "#section-placeholders" },
+  { label: "Features", href: "#features" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "FAQ", href: "#faq" },
 ]
 
 export const footerLinkGroups: FooterLinkGroup[] = [
@@ -96,7 +139,7 @@ export const foundationPillars: FoundationPillar[] = [
     title: "Design tokens",
     description:
       "Shared color, radius, shadow, spacing, and typography values are centralized before section work begins.",
-    icon: Layers3,
+    icon: Layers2,
   },
   {
     title: "Layout primitives",
@@ -118,59 +161,158 @@ export const foundationPillars: FoundationPillar[] = [
   },
 ]
 
+export const heroProofItems: HeroProofItem[] = [
+  { label: "Trusted by", value: "1,200+ operations teams", tone: "accent" },
+  { label: "Follow-up reduced", value: "42% on recurring workflows" },
+  { label: "Used across", value: "SaaS, fintech, and logistics" },
+]
+
+export const previewMetrics: PreviewMetric[] = [
+  { label: "Active workflows", value: "128", change: "+12 this week", tone: "accent" },
+  { label: "SLA health", value: "98.3%", change: "3 at-risk handoffs" },
+  { label: "Approvals waiting", value: "06", change: "2 need escalation", tone: "warning" },
+]
+
+export const previewChartPoints: PreviewChartPoint[] = [
+  { label: "Mon", value: 42 },
+  { label: "Tue", value: 56 },
+  { label: "Wed", value: 64 },
+  { label: "Thu", value: 71 },
+  { label: "Fri", value: 59 },
+]
+
+export const previewWorkflowItems: PreviewWorkflowItem[] = [
+  {
+    name: "Customer onboarding",
+    owner: "Maya Chen",
+    due: "Today, 4:00 PM",
+    progress: 84,
+    status: "On track",
+    tone: "success",
+  },
+  {
+    name: "Renewal approvals",
+    owner: "Chris Patel",
+    due: "Tomorrow, 10:30 AM",
+    progress: 58,
+    status: "Needs review",
+    tone: "warning",
+  },
+  {
+    name: "Launch readiness",
+    owner: "Avery Lopez",
+    due: "Friday, 2:00 PM",
+    progress: 73,
+    status: "Waiting on Legal",
+    tone: "muted",
+  },
+]
+
+export const previewActivityItems: PreviewActivityItem[] = [
+  {
+    title: "AI summary posted to Slack",
+    detail: "Renewal approvals are blocked on Finance and need one reviewer.",
+    icon: Bot,
+  },
+  {
+    title: "Escalation timer triggered",
+    detail: "An SLA alert fired for onboarding handoff #1842 after 18 hours idle.",
+    icon: BellRing,
+  },
+  {
+    title: "Handoff completed",
+    detail: "Implementation signed off and moved the launch workflow into QA.",
+    icon: CheckCheck,
+  },
+]
+
 export const placeholderSections: PlaceholderSectionContent[] = [
   {
-    id: "hero-placeholder",
-    eyebrow: "Hero",
-    title: "Primary conversion story",
-    description:
-      "Reserved for the headline, support copy, CTAs, and trust messaging defined in the Sprint 0 blueprint.",
-    bullets: ["Headline and subheadline", "Primary and secondary CTA pair", "Trust strip or logo row"],
-    icon: LayoutTemplate,
-  },
-  {
-    id: "preview-placeholder",
-    eyebrow: "Product Preview",
-    title: "Dashboard mockup and proof points",
-    description:
-      "This section will showcase a believable RelayOps interface and the product-led story around operational visibility.",
-    bullets: ["Interface mockup", "Status indicators", "Supporting stat callouts"],
-    icon: BarChart3,
-  },
-  {
-    id: "features-placeholder",
+    id: "features",
     eyebrow: "Features",
-    title: "Benefits and capability framing",
+    title: "Outcome-led feature grid",
     description:
-      "Future feature cards will connect workflow automation, intake, handoffs, and reporting to concrete outcomes.",
-    bullets: ["Outcome-led feature cards", "Operational use cases", "Clear benefit copy"],
+      "This section will explain how RelayOps handles intake, automations, ownership, and reporting without turning into a dense product dump.",
+    bullets: ["Operational use cases", "Outcome-focused feature cards", "Clear capability hierarchy"],
     icon: Blocks,
   },
   {
-    id: "proof-placeholder",
-    eyebrow: "Social Proof",
-    title: "Trust-building section",
+    id: "how-it-works",
+    eyebrow: "How It Works",
+    title: "Adoption flow and setup story",
     description:
-      "Testimonials, logo treatments, and outcome metrics will be added here once the product story is in place.",
-    bullets: ["Customer proof", "Result-oriented metrics", "Credibility cues"],
+      "A later sprint will show how teams capture work, automate handoffs, and track workflow health in a simple three-step story.",
+    bullets: ["Capture requests", "Automate handoffs", "Track progress and SLAs"],
+    icon: Workflow,
+  },
+  {
+    id: "social-proof",
+    eyebrow: "Social Proof",
+    title: "Testimonials and customer credibility",
+    description:
+      "Testimonials, logo treatments, and quantified outcomes will be added here once the hero and messaging are established.",
+    bullets: ["Customer quotes", "Outcome metrics", "Credibility markers"],
     icon: MessageSquareQuote,
   },
   {
-    id: "pricing-placeholder",
+    id: "pricing",
     eyebrow: "Pricing",
     title: "Plan comparison and CTA logic",
     description:
-      "The pricing area is intentionally deferred so the shared card system and CTA hierarchy are already established first.",
+      "Pricing stays deferred for now, but the future section will compare plans clearly and support the free-trial decision path.",
     bullets: ["Plan cards", "Most popular emphasis", "Monthly and annual toggle"],
     icon: WalletCards,
   },
   {
-    id: "faq-placeholder",
+    id: "faq",
     eyebrow: "FAQ",
     title: "Objection handling and reassurance",
     description:
       "An accordion-based FAQ will live here in a later sprint to handle setup, integrations, support, and commitment questions.",
     bullets: ["Accordion behavior", "Objection handling", "Conversion support"],
     icon: ShieldCheck,
+  },
+]
+
+export const heroCallouts = [
+  {
+    label: "SLA alerts",
+    value: "3 handoffs need attention",
+    icon: CircleAlert,
+  },
+  {
+    label: "Weekly trend",
+    value: "18% faster approvals",
+    icon: TrendingUp,
+  },
+  {
+    label: "Automation",
+    value: "6 recurring workflows active",
+    icon: TimerReset,
+  },
+  {
+    label: "Activity",
+    value: "Slack and Jira synced live",
+    icon: MessageSquareText,
+  },
+  {
+    label: "Workflow board",
+    value: "Live operational visibility",
+    icon: LayoutTemplate,
+  },
+  {
+    label: "Due soon",
+    value: "2 launch tasks close today",
+    icon: Clock3,
+  },
+  {
+    label: "Live dashboard",
+    value: "Bottlenecks surfaced instantly",
+    icon: Sparkles,
+  },
+  {
+    label: "Reporting",
+    value: "Weekly workflow health digest",
+    icon: BarChart3,
   },
 ]
