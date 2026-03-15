@@ -286,6 +286,10 @@ export const sprint5PlaceholderSections = placeholderSections.filter((section) =
   ["pricing", "faq"].includes(section.id),
 )
 
+export const sprint6PlaceholderSections = placeholderSections.filter((section) =>
+  ["faq"].includes(section.id),
+)
+
 export const heroCallouts = [
   {
     label: "SLA alerts",
