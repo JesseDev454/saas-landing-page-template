@@ -6,8 +6,9 @@ import { FeatureHighlightsSection } from "@/components/sections/FeatureHighlight
 import { FeaturesSection } from "@/components/sections/FeaturesSection"
 import { HeroSection } from "@/components/sections/HeroSection"
 import { ProductShowcaseSection } from "@/components/sections/ProductShowcaseSection"
+import { SocialProofSection } from "@/components/sections/SocialProofSection"
 import { SectionPlaceholder } from "@/components/sections/SectionPlaceholder"
-import { sprint4PlaceholderSections } from "@/lib/site"
+import { sprint5PlaceholderSections } from "@/lib/site"
 
 export function LandingPage() {
   return (
@@ -19,16 +20,17 @@ export function LandingPage() {
         <ProductShowcaseSection />
         <FeatureHighlightsSection />
         <FeaturesSection />
+        <SocialProofSection />
 
         <Section id="section-placeholders" tone="muted">
           <SectionHeader
             eyebrow="Still to build"
             title="The remaining landing sections stay deferred for later sprints."
-            description="Sprint 4 focuses on explaining product value. Pricing and FAQ remain placeholders until their dedicated implementation passes."
+            description="Sprint 5 adds credibility and trust signals. Pricing and FAQ remain placeholders until their dedicated implementation passes."
           />
 
           <div className="mt-content grid gap-6 lg:grid-cols-2">
-            {sprint4PlaceholderSections.map((section) => (
+            {sprint5PlaceholderSections.map((section) => (
               <SectionPlaceholder key={section.id} section={section} />
             ))}
           </div>
