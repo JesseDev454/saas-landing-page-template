@@ -1,6 +1,5 @@
 import type { LucideIcon } from "lucide-react"
 import {
-  ArrowUpRight,
   CircleAlert,
   Github,
   Linkedin,
@@ -155,18 +154,5 @@ export const previewActivityItems: PreviewActivityItem[] = [
     title: "Finance approval requested",
     detail: "A high-priority handoff was flagged before it slowed the team down.",
     icon: CircleAlert,
-  },
-]
-
-export const heroCallouts = [
-  {
-    label: "Priority alerts",
-    value: "3 tasks need attention",
-    icon: CircleAlert,
-  },
-  {
-    label: "Momentum",
-    value: "18% faster turnaround",
-    icon: ArrowUpRight,
   },
 ]

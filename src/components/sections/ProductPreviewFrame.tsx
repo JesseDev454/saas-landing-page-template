@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Reveal } from "@/components/ui/reveal"
 import {
-  heroCallouts,
   previewActivityItems,
   previewChartPoints,
   previewMetrics,
@@ -24,49 +23,9 @@ const workflowToneClasses = {
 } as const
 
 export function ProductPreviewFrame() {
-  const LeadingCalloutIcon = heroCallouts[0].icon
-  const TrailingCalloutIcon = heroCallouts[1].icon
-
   return (
     <div className="relative">
       <div className="absolute inset-x-12 top-10 -z-10 h-40 rounded-full bg-secondary/12 blur-3xl" />
-
-      <Reveal
-        delay={260}
-        distance="sm"
-        className="absolute -left-5 top-12 hidden max-w-[12rem] 2xl:block"
-      >
-        <div className="interactive-card-soft rounded-2xl border border-border/70 bg-background/90 p-4 shadow-soft backdrop-blur">
-          <p className="text-caption font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-            {heroCallouts[0].label}
-          </p>
-          <div className="mt-3 flex items-start gap-3">
-            <div className="rounded-xl bg-primary/10 p-2 text-primary">
-              <LeadingCalloutIcon className="size-4" />
-            </div>
-            <p className="text-sm font-medium text-foreground">{heroCallouts[0].value}</p>
-          </div>
-        </div>
-      </Reveal>
-
-      <Reveal
-        delay={320}
-        direction="left"
-        distance="sm"
-        className="absolute -right-5 bottom-12 hidden max-w-[12rem] 2xl:block"
-      >
-        <div className="interactive-card-soft rounded-2xl border border-border/70 bg-background/90 p-4 shadow-soft backdrop-blur">
-          <p className="text-caption font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-            {heroCallouts[1].label}
-          </p>
-          <div className="mt-3 flex items-start gap-3">
-            <div className="rounded-xl bg-secondary/10 p-2 text-secondary">
-              <TrailingCalloutIcon className="size-4" />
-            </div>
-            <p className="text-sm font-medium text-foreground">{heroCallouts[1].value}</p>
-          </div>
-        </div>
-      </Reveal>
 
       <Card className="surface-grid interactive-card relative overflow-hidden rounded-[32px] border-border/70 bg-card/92 shadow-card">
         <CardHeader className="gap-6 border-b border-border/60 pb-6">

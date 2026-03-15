@@ -17,7 +17,7 @@ export function HeroSection() {
     >
       <div className="absolute inset-x-0 top-[-12rem] -z-10 h-[28rem] bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.12),transparent_36%),radial-gradient(circle_at_top_right,rgba(249,115,22,0.08),transparent_28%)]" />
 
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(430px,0.96fr)] lg:items-center lg:gap-12">
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,40rem)] lg:items-center lg:gap-12">
         <div className="space-y-8">
           <Reveal delay={40} className="space-y-5">
             <Badge variant="surface" className="w-fit gap-2">
@@ -71,7 +71,7 @@ export function HeroSection() {
         <Reveal
           delay={180}
           direction="left"
-          className="mx-auto w-full max-w-[42rem] lg:max-w-none"
+          className="mx-auto w-full max-w-[40rem] lg:ml-auto lg:max-w-[40rem]"
         >
           <ProductPreviewFrame />
         </Reveal>
