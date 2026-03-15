@@ -3,8 +3,9 @@ import { Navbar } from "@/components/layout/Navbar"
 import { Section } from "@/components/layout/Section"
 import { SectionHeader } from "@/components/layout/SectionHeader"
 import { HeroSection } from "@/components/sections/HeroSection"
+import { ProductShowcaseSection } from "@/components/sections/ProductShowcaseSection"
 import { SectionPlaceholder } from "@/components/sections/SectionPlaceholder"
-import { placeholderSections } from "@/lib/site"
+import { sprint3PlaceholderSections } from "@/lib/site"
 
 export function LandingPage() {
   return (
@@ -13,16 +14,17 @@ export function LandingPage() {
 
       <main>
         <HeroSection />
+        <ProductShowcaseSection />
 
         <Section id="section-placeholders" tone="muted">
           <SectionHeader
-            eyebrow="Coming next"
-            title="The rest of the landing page stays intentionally deferred."
-            description="Sprint 2 focuses on the hero and early trust signals. Features, how it works, social proof, pricing, and FAQ remain placeholders until later sprints."
+            eyebrow="Still to build"
+            title="The remaining landing sections stay deferred for later sprints."
+            description="Sprint 3 focuses only on the product showcase. Features, pricing, and FAQ remain placeholders until their dedicated implementation passes."
           />
 
-          <div className="mt-content grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-            {placeholderSections.map((section) => (
+          <div className="mt-content grid gap-6 lg:grid-cols-3">
+            {sprint3PlaceholderSections.map((section) => (
               <SectionPlaceholder key={section.id} section={section} />
             ))}
           </div>
