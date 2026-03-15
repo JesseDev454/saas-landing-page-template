@@ -11,7 +11,7 @@ const accordionItems: AccordionItemData[] = faqItems.map((item) => ({
 
 export function FAQSection() {
   return (
-    <Section id="faq" className="relative" containerClassName="relative">
+    <Section id="faq" tone="muted" className="relative" containerClassName="relative">
       <div className="absolute inset-x-0 top-10 -z-10 h-52 bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.05),transparent_44%)]" />
 
       <SectionHeader

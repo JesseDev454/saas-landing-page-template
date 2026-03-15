@@ -50,7 +50,7 @@ function AutomationVisual() {
           {automationTemplates.map((template) => (
             <div
               key={template.name}
-              className="rounded-[22px] border border-border/70 bg-background/84 p-4 shadow-soft transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-0.5"
+              className="interactive-card-soft rounded-[22px] border border-border/70 bg-background/84 p-4 shadow-soft"
             >
               <div className="flex items-start justify-between gap-3">
                 <div>
@@ -81,7 +81,7 @@ function AutomationVisual() {
             </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
             {automationSummaryChips.map((chip) => (
               <div
                 key={chip.label}
@@ -107,7 +107,7 @@ function BottleneckVisual() {
       subtitle="SLA risk and blocked work surfaced before the team falls behind."
     >
       <div className="space-y-4">
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {bottleneckSignals.map((signal) => (
             <div
               key={signal.label}
@@ -137,7 +137,7 @@ function BottleneckVisual() {
             return (
               <div
                 key={item.title}
-                className="rounded-[22px] border border-border/70 bg-background/84 p-4 shadow-soft transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-0.5"
+                className="interactive-card-soft rounded-[22px] border border-border/70 bg-background/84 p-4 shadow-soft"
               >
                 <div className="flex items-start gap-3">
                   <div
@@ -256,7 +256,7 @@ function OwnershipVisual() {
             {ownershipRoster.map((owner, index) => (
               <div
                 key={owner.name}
-                className="rounded-2xl border border-border/70 bg-card/90 p-4 transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-0.5"
+                className="interactive-card-soft rounded-2xl border border-border/70 bg-card/90 p-4"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>

@@ -11,7 +11,7 @@ const statToneClasses = {
 
 export function LogoCloudItem({ logo }: { logo: SocialLogo }) {
   return (
-    <div className="rounded-[24px] border border-border/70 bg-background/82 p-4 shadow-soft transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-0.5">
+    <div className="interactive-card-soft rounded-[24px] border border-border/70 bg-background/82 p-4 shadow-soft">
       <svg
         viewBox="0 0 180 48"
         role="img"
@@ -42,7 +42,7 @@ export function OutcomeStatCard({ stat }: { stat: OutcomeStat }) {
   return (
     <Card
       className={cn(
-        "h-full border-border/70 shadow-card transition-transform duration-300 motion-reduce:transform-none motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-4 motion-safe:duration-700 hover:-translate-y-1",
+        "interactive-card h-full border-border/70 shadow-card motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-4 motion-safe:duration-700",
         statToneClasses[stat.tone ?? "default"],
       )}
     >
@@ -68,7 +68,7 @@ export function OutcomeStatCard({ stat }: { stat: OutcomeStat }) {
 
 export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <Card className="h-full border-border/70 bg-card/96 shadow-card transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-1">
+    <Card className="interactive-card h-full border-border/70 bg-card/96 shadow-card">
       <CardHeader className="gap-5">
         <div className="flex items-center justify-between gap-3">
           <div className="rounded-2xl bg-secondary/10 p-3 text-secondary">
@@ -76,7 +76,7 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           </div>
           <Badge variant="outline">{testimonial.company}</Badge>
         </div>
-        <blockquote className="text-body-lg text-foreground">
+        <blockquote className="text-body-lg leading-8 text-foreground">
           "{testimonial.quote}"
         </blockquote>
       </CardHeader>

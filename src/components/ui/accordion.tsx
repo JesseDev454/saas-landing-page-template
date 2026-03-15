@@ -30,7 +30,7 @@ export function Accordion({ items, defaultValue, className }: AccordionProps) {
             key={item.id}
             className={cn(
               "rounded-[1.6rem] border border-border/70 bg-card/96 shadow-soft transition-all duration-300",
-              isOpen ? "shadow-card" : "hover:-translate-y-0.5 hover:shadow-card",
+              isOpen ? "shadow-card" : "interactive-card-soft",
             )}
           >
             <h3>
@@ -39,7 +39,7 @@ export function Accordion({ items, defaultValue, className }: AccordionProps) {
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:px-7"
+                className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:px-7 sm:py-6"
                 onClick={() => setOpenValue(isOpen ? null : item.id)}
               >
                 <span className="font-heading text-lg font-semibold tracking-tight text-foreground sm:text-xl">
@@ -70,7 +70,7 @@ export function Accordion({ items, defaultValue, className }: AccordionProps) {
                 aria-labelledby={triggerId}
                 className="overflow-hidden"
               >
-                <div className="border-t border-border/70 pb-6 pt-4 text-body text-muted-foreground">
+                <div className="border-t border-border/70 pb-6 pt-4 text-body leading-7 text-muted-foreground sm:pb-7">
                   {item.content}
                 </div>
               </div>

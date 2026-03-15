@@ -30,7 +30,7 @@ export function ProductPreviewFrame() {
     <div className="relative">
       <div className="absolute inset-x-12 top-10 -z-10 h-40 rounded-full bg-secondary/12 blur-3xl" />
 
-      <div className="absolute -left-5 top-12 hidden max-w-[12rem] rounded-2xl border border-border/70 bg-background/90 p-4 shadow-soft backdrop-blur xl:block">
+      <div className="absolute -left-5 top-12 hidden max-w-[12rem] rounded-2xl border border-border/70 bg-background/90 p-4 shadow-soft backdrop-blur 2xl:block">
         <p className="text-caption font-semibold uppercase tracking-[0.14em] text-muted-foreground">
           {heroCallouts[0].label}
         </p>
@@ -42,7 +42,7 @@ export function ProductPreviewFrame() {
         </div>
       </div>
 
-      <div className="absolute -right-5 bottom-12 hidden max-w-[12rem] rounded-2xl border border-border/70 bg-background/90 p-4 shadow-soft backdrop-blur xl:block">
+      <div className="absolute -right-5 bottom-12 hidden max-w-[12rem] rounded-2xl border border-border/70 bg-background/90 p-4 shadow-soft backdrop-blur 2xl:block">
         <p className="text-caption font-semibold uppercase tracking-[0.14em] text-muted-foreground">
           {heroCallouts[1].label}
         </p>
@@ -54,7 +54,7 @@ export function ProductPreviewFrame() {
         </div>
       </div>
 
-      <Card className="surface-grid relative overflow-hidden rounded-[32px] border-border/70 bg-card/92 shadow-card transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-1">
+      <Card className="surface-grid interactive-card relative overflow-hidden rounded-[32px] border-border/70 bg-card/92 shadow-card">
         <CardHeader className="gap-6 border-b border-border/60 pb-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="space-y-3">
@@ -66,7 +66,7 @@ export function ProductPreviewFrame() {
                 <CardTitle className="max-w-md text-[1.7rem] leading-tight">
                   Keep requests, owners, and SLA risk in one view.
                 </CardTitle>
-                <CardDescription className="max-w-lg">
+                <CardDescription className="max-w-lg leading-7">
                   A product preview teaser for the hero. The full dashboard story and deeper analytics section will land in a later sprint.
                 </CardDescription>
               </div>
@@ -82,12 +82,12 @@ export function ProductPreviewFrame() {
             </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
             {previewMetrics.map((metric) => (
               <div
                 key={metric.label}
                 className={cn(
-                  "rounded-2xl border border-border/70 p-4 shadow-soft transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-0.5",
+                  "interactive-card-soft rounded-2xl border border-border/70 p-4 shadow-soft",
                   metricToneClasses[metric.tone ?? "default"],
                 )}
               >
@@ -155,13 +155,13 @@ export function ProductPreviewFrame() {
                 {previewWorkflowItems.map((item) => (
                   <div
                     key={item.name}
-                    className="rounded-2xl border border-border/70 bg-card/90 p-4 transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-0.5"
+                    className="interactive-card-soft rounded-2xl border border-border/70 bg-card/90 p-4"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <p className="font-medium text-foreground">{item.name}</p>
                         <p className="mt-1 text-caption text-muted-foreground">
-                          {item.owner} • Due {item.due}
+                          {item.owner} | Due {item.due}
                         </p>
                       </div>
                       <span
@@ -175,10 +175,7 @@ export function ProductPreviewFrame() {
                     </div>
 
                     <div className="mt-4 h-2 rounded-full bg-muted">
-                      <div
-                        className="h-2 rounded-full bg-secondary"
-                        style={{ width: `${item.progress}%` }}
-                      />
+                      <div className="h-2 rounded-full bg-secondary" style={{ width: `${item.progress}%` }} />
                     </div>
                   </div>
                 ))}
@@ -208,14 +205,16 @@ export function ProductPreviewFrame() {
                 return (
                   <div
                     key={item.title}
-                    className="flex items-start gap-3 rounded-2xl border border-border/70 bg-card/90 p-4"
+                    className="rounded-2xl border border-border/70 bg-card/90 p-4"
                   >
-                    <div className="rounded-xl bg-secondary/10 p-2 text-secondary">
-                      <Icon className="size-4" />
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-sm font-medium text-foreground">{item.title}</p>
-                      <p className="text-caption text-muted-foreground">{item.detail}</p>
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-xl bg-secondary/10 p-2 text-secondary">
+                        <Icon className="size-4" />
+                      </div>
+                      <div className="space-y-1">
+                        <p className="text-sm font-medium text-foreground">{item.title}</p>
+                        <p className="text-caption text-muted-foreground">{item.detail}</p>
+                      </div>
                     </div>
                   </div>
                 )

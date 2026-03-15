@@ -34,7 +34,7 @@ export function Section({
 }: SectionProps) {
   return (
     <Component
-      className={cn(toneVariants[tone], spacingVariants[spacing], className)}
+      className={cn("scroll-mt-28 sm:scroll-mt-32", toneVariants[tone], spacingVariants[spacing], className)}
       {...props}
     >
       <Container className={containerClassName}>{children}</Container>

@@ -17,29 +17,27 @@ export function FeatureHighlightsSection() {
         className="mx-auto"
       />
 
-      <div className="mt-content space-y-10 lg:space-y-14">
+      <div className="mt-content space-y-12 lg:space-y-16">
         {featureHighlights.map((item, index) => (
           <div
             key={item.id}
-            className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(430px,1fr)] lg:items-center lg:gap-10"
+            className="grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(360px,1fr)] lg:items-center lg:gap-10 xl:gap-12"
           >
             <div className={cn(index % 2 === 1 ? "lg:order-2" : undefined)}>
               <div className="space-y-5">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                  {item.eyebrow}
-                </p>
+                <p className="eyebrow-label">{item.eyebrow}</p>
                 <div className="space-y-4">
                   <h3 className="max-w-[18ch] font-heading text-heading tracking-tight text-foreground sm:text-[2.15rem]">
                     {item.title}
                   </h3>
-                  <p className="max-w-2xl text-body-lg text-muted-foreground">
+                  <p className="max-w-xl text-body-lg leading-8 text-muted-foreground">
                     {item.description}
                   </p>
                 </div>
 
-                <ul className="space-y-3">
+                <ul className="max-w-lg space-y-3">
                   {item.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-start gap-3 text-body text-muted-foreground">
+                    <li key={bullet} className="flex items-start gap-3 text-body leading-7 text-muted-foreground">
                       <span className="mt-2 size-2 rounded-full bg-secondary/80" aria-hidden="true" />
                       <span>{bullet}</span>
                     </li>

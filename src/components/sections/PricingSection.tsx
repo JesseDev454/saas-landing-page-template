@@ -16,11 +16,12 @@ export function PricingSection() {
           eyebrow="Pricing"
           title="Straightforward pricing for operations teams that need better workflow control."
           description="Choose the plan that matches your team size today, then switch to yearly billing when you are ready to lock in a lower monthly rate."
+          className="max-w-2xl"
         />
 
-        <div className="flex flex-col gap-3 lg:items-end">
+        <div className="flex flex-col gap-3 sm:items-start lg:items-end">
           <BillingToggle billingCycle={billingCycle} onChange={setBillingCycle} />
-          <p className="text-sm text-muted-foreground">
+          <p className="max-w-xs text-sm leading-6 text-muted-foreground">
             Yearly billing includes a 20% discount on every plan.
           </p>
         </div>

@@ -31,7 +31,7 @@ export function StatChip({
       <p className="text-caption font-medium uppercase tracking-[0.14em] text-muted-foreground">
         {label}
       </p>
-      <p className="mt-1 text-sm font-semibold text-foreground">{value}</p>
+      <p className="mt-1 text-sm font-semibold leading-6 text-foreground">{value}</p>
     </div>
   )
 }

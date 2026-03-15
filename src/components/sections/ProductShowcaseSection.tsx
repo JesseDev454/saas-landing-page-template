@@ -17,7 +17,7 @@ export function ProductShowcaseSection() {
         className="mx-auto"
       />
 
-      <div className="mt-6 flex flex-wrap justify-center gap-3">
+      <div className="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-3">
         {showcaseHighlights.map((item) => (
           <Badge key={item.label} variant="surface" className="px-4 py-2">
             <span className="font-semibold text-foreground">{item.label}:</span>

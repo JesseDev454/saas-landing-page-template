@@ -21,6 +21,14 @@ export function Navbar() {
   }, [])
 
   useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : ""
+
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [mobileMenuOpen])
+
+  useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setMobileMenuOpen(false)
@@ -53,9 +61,9 @@ export function Navbar() {
             : "border-border/70 bg-background/78 shadow-soft",
         )}
       >
-        <div className="flex h-[4.5rem] items-center justify-between gap-4 py-3">
+        <div className="flex min-h-[4.5rem] items-center justify-between gap-4 py-3">
           <a
-            className="flex items-center gap-3 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex items-center gap-3 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             href="#hero"
           >
             <div className="flex size-11 items-center justify-center rounded-2xl bg-secondary/12 font-heading text-sm font-semibold text-secondary">
@@ -69,11 +77,11 @@ export function Navbar() {
             </div>
           </a>
 
-          <nav className="hidden items-center gap-7 md:flex">
+          <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
             {navItems.map((item) => (
               <a
                 key={item.href}
-                className="rounded-full text-sm font-medium text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="rounded-full px-1 py-1 text-sm font-medium text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 href={item.href}
               >
                 {item.label}
@@ -92,7 +100,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="inline-flex size-11 items-center justify-center rounded-full border border-border bg-background text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-full border border-border bg-background text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden"
             onClick={() => setMobileMenuOpen((open) => !open)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation"
@@ -110,24 +118,24 @@ export function Navbar() {
           )}
         >
           <div className="overflow-hidden">
-            <nav className="flex flex-col gap-5 py-5">
+            <nav aria-label="Mobile primary" className="flex flex-col gap-2 py-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
-                  className="rounded-full text-sm font-medium text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className="rounded-2xl border border-transparent px-4 py-3 text-sm font-medium text-foreground/80 transition-colors hover:border-border/70 hover:bg-muted/70 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="flex flex-col gap-3 pt-2">
-                <Button asChild variant="primary">
+              <div className="flex flex-col gap-3 pt-4">
+                <Button asChild variant="primary" className="w-full">
                   <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>
                     Start Free Trial
                   </a>
                 </Button>
-                <Button asChild variant="ghost">
+                <Button asChild variant="outline" className="w-full">
                   <a href="#footer" onClick={() => setMobileMenuOpen(false)}>
                     Book Demo
                   </a>

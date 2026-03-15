@@ -40,7 +40,7 @@ function WorkflowCard({
   tone,
 }: (typeof showcaseWorkflows)[number]) {
   return (
-    <div className="rounded-[22px] border border-border/70 bg-background/82 p-4 shadow-soft transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-1">
+    <div className="interactive-card rounded-[22px] border border-border/70 bg-background/82 p-4 shadow-soft">
       <div className="flex items-start justify-between gap-3">
         <div className="space-y-1">
           <p className="font-medium text-foreground">{name}</p>
@@ -80,7 +80,7 @@ function WorkloadRow({
   overdueTasks,
 }: (typeof workloadOwners)[number]) {
   return (
-    <div className="space-y-3 rounded-[22px] border border-border/70 bg-background/82 p-4 shadow-soft transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-0.5">
+    <div className="interactive-card-soft space-y-3 rounded-[22px] border border-border/70 bg-background/82 p-4 shadow-soft">
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="font-medium text-foreground">{name}</p>
@@ -109,9 +109,9 @@ function WorkloadRow({
 
 export function ProductDashboardCanvas() {
   return (
-    <div className="overflow-x-auto pb-3">
-      <div className="min-w-[780px] rounded-[34px] border border-border/70 bg-card/95 p-4 shadow-card sm:p-5">
-        <div className="flex items-center justify-between gap-4 rounded-[26px] border border-border/70 bg-background/82 px-4 py-3 shadow-soft">
+    <div className="-mx-1 overflow-x-auto px-1 pb-4 sm:mx-0 sm:px-0">
+      <div className="min-w-[720px] rounded-[34px] border border-border/70 bg-card/95 p-4 shadow-card sm:p-5">
+        <div className="flex flex-col gap-4 rounded-[26px] border border-border/70 bg-background/82 px-4 py-3 shadow-soft sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
             <div className="flex size-11 items-center justify-center rounded-2xl bg-secondary/12 font-heading text-sm font-semibold text-secondary">
               RO
@@ -122,7 +122,7 @@ export function ProductDashboardCanvas() {
             </div>
           </div>
 
-          <nav className="hidden items-center gap-2 lg:flex">
+          <nav className="hidden items-center gap-2 xl:flex">
             {showcaseTopNav.map((item) => {
               const Icon = item.icon
 
@@ -138,7 +138,7 @@ export function ProductDashboardCanvas() {
             })}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3 self-stretch sm:self-auto">
             <Badge variant="surface" className="gap-2">
               <span className="size-2 rounded-full bg-emerald-500" />
               {showcaseMeta.liveSyncLabel}
@@ -149,12 +149,12 @@ export function ProductDashboardCanvas() {
           </div>
         </div>
 
-        <div className="mt-4 grid gap-4 xl:grid-cols-12">
+        <div className="mt-4 grid gap-4 lg:grid-cols-12">
           {showcaseSummaryStats.map((stat) => (
             <div
               key={stat.label}
               className={cn(
-                "rounded-[24px] border border-border/70 p-4 shadow-soft xl:col-span-4",
+                "rounded-[24px] border border-border/70 p-4 shadow-soft lg:col-span-4",
                 summaryToneClasses[stat.tone ?? "default"],
               )}
             >
@@ -172,7 +172,7 @@ export function ProductDashboardCanvas() {
             </div>
           ))}
 
-          <Card className="xl:col-span-7 border-border/70 bg-card/96 shadow-card">
+          <Card className="lg:col-span-7 border-border/70 bg-card/96 shadow-card">
             <CardHeader className="gap-3">
               <div className="flex items-start justify-between gap-4">
                 <div className="space-y-1">
@@ -191,7 +191,7 @@ export function ProductDashboardCanvas() {
             </CardContent>
           </Card>
 
-          <Card className="xl:col-span-5 border-border/70 bg-card/96 shadow-card">
+          <Card className="lg:col-span-5 border-border/70 bg-card/96 shadow-card">
             <CardHeader className="gap-3">
               <div className="space-y-1">
                 <CardTitle className="text-[1.35rem]">Team workload</CardTitle>
@@ -207,7 +207,7 @@ export function ProductDashboardCanvas() {
             </CardContent>
           </Card>
 
-          <Card className="xl:col-span-4 border-border/70 bg-card/96 shadow-card">
+          <Card className="lg:col-span-4 border-border/70 bg-card/96 shadow-card">
             <CardHeader className="gap-3">
               <div className="flex items-start justify-between gap-4">
                 <div className="space-y-1">
@@ -225,7 +225,7 @@ export function ProductDashboardCanvas() {
               {bottleneckItems.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[22px] border border-rose-100 bg-rose-50/80 p-4 shadow-soft transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-0.5"
+                  className="interactive-card-soft rounded-[22px] border border-rose-100 bg-rose-50/80 p-4 shadow-soft"
                 >
                   <p className="font-medium text-foreground">{item.title}</p>
                   <p className="mt-2 text-caption text-muted-foreground">{item.detail}</p>
@@ -237,7 +237,7 @@ export function ProductDashboardCanvas() {
             </CardContent>
           </Card>
 
-          <Card className="xl:col-span-4 border-border/70 bg-card/96 shadow-card">
+          <Card className="lg:col-span-4 border-border/70 bg-card/96 shadow-card">
             <CardHeader className="gap-3">
               <div className="space-y-1">
                 <CardTitle className="text-[1.35rem]">Request intake</CardTitle>
@@ -289,7 +289,7 @@ export function ProductDashboardCanvas() {
             </CardContent>
           </Card>
 
-          <Card className="xl:col-span-4 border-border/70 bg-card/96 shadow-card">
+          <Card className="lg:col-span-4 border-border/70 bg-card/96 shadow-card">
             <CardHeader className="gap-3">
               <div className="space-y-1">
                 <CardTitle className="text-[1.35rem]">Activity feed</CardTitle>
@@ -305,7 +305,7 @@ export function ProductDashboardCanvas() {
                 return (
                   <div
                     key={item.title}
-                    className="flex items-start gap-3 rounded-[22px] border border-border/70 bg-background/82 p-4 shadow-soft transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-0.5"
+                    className="interactive-card-soft flex items-start gap-3 rounded-[22px] border border-border/70 bg-background/82 p-4 shadow-soft"
                   >
                     <div className="rounded-xl bg-secondary/10 p-2 text-secondary">
                       <Icon className="size-4" />

@@ -104,7 +104,7 @@ export function PricingCard({
   return (
     <Card
       className={cn(
-        "flex h-full flex-col border-border/70 bg-card/96 shadow-card transition-all duration-300 motion-reduce:transform-none hover:-translate-y-1 hover:shadow-card",
+        "interactive-card flex h-full flex-col border-border/70 bg-card/96 shadow-card",
         plan.popular
           ? "border-secondary/40 bg-[linear-gradient(180deg,rgba(240,249,255,0.92),rgba(255,255,255,0.98))] ring-1 ring-secondary/20"
           : undefined,
@@ -113,7 +113,7 @@ export function PricingCard({
       <CardHeader className="gap-5">
         <div className="flex items-start justify-between gap-4">
           <div className="space-y-2">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <CardTitle>{plan.name}</CardTitle>
               {plan.popular ? <Badge variant="brand">Most Popular</Badge> : null}
             </div>
@@ -139,9 +139,9 @@ export function PricingCard({
       </CardHeader>
 
       <CardContent className="flex-1">
-        <ul className="space-y-3">
+        <ul className="space-y-3.5">
           {plan.features.map((feature) => (
-            <li key={feature} className="flex items-start gap-3 text-body text-muted-foreground">
+            <li key={feature} className="flex items-start gap-3 text-body leading-7 text-muted-foreground">
               <span
                 className={cn(
                   "mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full",
@@ -170,7 +170,7 @@ export function PricingTrustBadge({ item }: { item: PricingTrustItem }) {
   const Icon = item.icon
 
   return (
-    <div className="flex items-center gap-2 rounded-full border border-border/70 bg-background/84 px-4 py-2 text-sm text-foreground shadow-soft">
+    <div className="flex min-h-[3rem] items-center gap-2 rounded-full border border-border/70 bg-background/84 px-4 py-2 text-sm text-foreground shadow-soft">
       <Icon className="size-4 text-secondary" aria-hidden="true" />
       <span>{item.label}</span>
     </div>

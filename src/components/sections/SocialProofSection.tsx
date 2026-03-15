@@ -21,14 +21,14 @@ export function SocialProofSection() {
       />
 
       <div className="mt-content">
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-6">
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
           {socialLogos.map((logo) => (
             <LogoCloudItem key={logo.name} logo={logo} />
           ))}
         </div>
       </div>
 
-      <div className="mt-content grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="mt-content grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {outcomeStats.map((stat) => (
           <OutcomeStatCard key={stat.label} stat={stat} />
         ))}

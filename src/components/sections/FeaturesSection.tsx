@@ -15,14 +15,14 @@ export function FeaturesSection() {
         className="mx-auto"
       />
 
-      <div className="mt-content grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-content grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {featureGridItems.map((item) => {
           const Icon = item.icon
 
           return (
             <Card
               key={item.title}
-              className="h-full border-border/70 bg-card/96 shadow-card transition-transform duration-300 motion-reduce:transform-none hover:-translate-y-1"
+              className="interactive-card h-full border-border/70 bg-card/96 shadow-card"
             >
               <CardHeader className="gap-5">
                 <IconContainer icon={Icon} />

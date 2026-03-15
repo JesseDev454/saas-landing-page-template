@@ -25,13 +25,13 @@ export function FinalCTASection() {
           </div>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:items-center">
-            <Button asChild size="lg" variant="primary">
+            <Button asChild size="lg" variant="primary" className="w-full sm:w-auto">
               <a href="#pricing">
                 Start Free Trial
                 <ArrowRight className="size-4" />
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
               <a href="#footer">Book Demo</a>
             </Button>
           </div>
@@ -40,7 +40,7 @@ export function FinalCTASection() {
             {finalCtaProofPoints.map((item) => (
               <div
                 key={item}
-                className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/84 px-4 py-2 shadow-soft"
+                className="inline-flex min-h-[3rem] items-center gap-2 rounded-full border border-border/70 bg-background/84 px-4 py-2 shadow-soft"
               >
                 <Check className="size-4 text-secondary" aria-hidden="true" />
                 <span>{item}</span>
